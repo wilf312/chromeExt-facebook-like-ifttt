@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "NetworkWatcher",
+  "version": "0.1.0",
+  "icons": {
+    "128": "icon.png"
+  },
+  "permissions": [
+    "https://www.facebook.com/*",
+    "webRequest",
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "jquery-3.1.1.min.js",
+      "config.js",
+      "background.js"
+    ]
+  },
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["content.js"],
+    "run_at": "document_start"
+  }]
+}
